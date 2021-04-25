@@ -41,7 +41,7 @@ class FacebookAuth {
           // Set essential details to [UserInfoServices]
           Provider.of<UserInfoServices>(this._context, listen: false)
               .setEssentialDetailsOfUser(
-                  fbUser.user.displayName, fbUser.user.email);
+                  fbUser.user.displayName, fbUser.user.email,"");
 
           // Navigate to Additional Details Form
           Navigator.push(this._context,

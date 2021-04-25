@@ -47,7 +47,7 @@ class GoogleAuthenticate {
               // Set essential details to [UserInfoServices]
               Provider.of<UserInfoServices>(this._context, listen: false)
                   .setEssentialDetailsOfUser(
-                  registeredUser.user.displayName, registeredUser.user.email);
+                  registeredUser.user.displayName, registeredUser.user.email,"");
 
               // Navigate to Additional Details Form
               Navigator.push(this._context,

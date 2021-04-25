@@ -34,8 +34,8 @@ class UserInfoServices extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setEssentialDetailsOfUser(String name, String email) {
-    this._user = Users.setEsssentialDetails(name, email);
+  void setEssentialDetailsOfUser(String name, String email,String number) {
+    this._user = Users.setEsssentialDetails(name, email,number);
   }
 
   void setAdditionalDetailsOfUser(String _course, String _dept, String _college,

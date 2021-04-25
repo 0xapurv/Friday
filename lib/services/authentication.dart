@@ -168,7 +168,7 @@ class AuthenticationService {
         await user.updateProfile(displayName: name);
         // Set essential details to [UserInfoServices]
         Provider.of<UserInfoServices>(context, listen: false)
-            .setEssentialDetailsOfUser(name, email);
+            .setEssentialDetailsOfUser(name, email,"");
         // Navigate to Addtional Details Form
 
         user.sendEmailVerification();// Send Email Verification

@@ -4,15 +4,16 @@ import 'package:flutter/cupertino.dart';
 enum Gender { Male, Female, Other }
 enum Mode { Online, Offline }
 
-class Users {
-  String uid, name, email, profilePictureUrl, university, course, department;
+@immutable class Users {
+  String uid, name,number, email, profilePictureUrl, university, course, department;
   int age, year;
   Gender gender;
 
-  Users({
+   Users({
     this.uid,
     @required this.name,
     @required this.email,
+    @required this.number,
     this.profilePictureUrl,
     @required this.university,
     @required this.course,
@@ -25,12 +26,14 @@ class Users {
   Users.setEsssentialDetails(
     String _name,
     String _email,
+    String _number,
   ) {
     this.name = _name;
     this.email = _email;
+    this.number = _number;
   }
 
-  void setAdditionalDetails(String _course, String _dept, String _college,
+   void setAdditionalDetails(String _course, String _dept, String _college,
       int _year, Gender _gender, int _age,
       [String _profilePicUrl = ""]) {
     this.course = _course;
@@ -48,6 +51,7 @@ class Users {
     return new Users(
       uid: _snapshot.id,
       name: json["name"],
+      number: json["number"],
       email: json["email"],
       profilePictureUrl: json["profilePictureUrl"],
       university: json["university"],
@@ -64,6 +68,7 @@ class Users {
     return {
       "name": name,
       "email": email,
+      "number":number,
       "profilePictureUrl": profilePictureUrl,
       "university": university,
       "course": course,

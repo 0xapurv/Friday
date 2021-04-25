@@ -7,9 +7,9 @@ import 'package:provider/provider.dart';
 import 'bottom_navigation.dart';
 
 class AuthHandlingWidget extends StatefulWidget {
-  final String name, email;
+  final String name, email,number;
 
-  const AuthHandlingWidget({Key key, this.name, this.email}) : super(key: key);
+  const AuthHandlingWidget({Key key, this.name, this.email,this.number}) : super(key: key);
   @override
   _AuthHandlingWidgetState createState() => _AuthHandlingWidgetState();
 }
@@ -31,7 +31,7 @@ class _AuthHandlingWidgetState extends State<AuthHandlingWidget> {
         if (isUserExists.connectionState == ConnectionState.done) {
           if (!isUserExists.data) {
             Provider.of<UserInfoServices>(ctx, listen: false)
-                .setEssentialDetailsOfUser(widget.name, widget.email);
+                .setEssentialDetailsOfUser(widget.name, widget.email,widget.number);
             return SignUpAdditionalDetails();
           } else
             return BottomNavigation();
